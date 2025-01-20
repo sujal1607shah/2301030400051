@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+       * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    font-family: 'Gilroy';
+}
+
+h1 {
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.image {
+    height: 50vh;
+    width: 90%; /* Use relative width */
+    max-width: 600px; /* Set a max-width for larger screens */
+    background-color: aqua;
+    margin: 20px auto; /* Center the element horizontally */
+}
+
+.image img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover; /* Ensure the image scales properly */
+}
+.step {
+    background-color: #444;
+    margin-bottom: 15px;
+    padding: 15px;
+    border-radius: 5px;
+}
+
+.step h2 {
+    font-size: 1.5rem;
+    color: #ff5722;
+    margin-bottom: 10px;
+}
+
+.step p {
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #eaeaea;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .image {
+        height: 40vh; /* Adjust height for smaller screens */
+        max-width: 80%; /* Reduce max width */
+    }
+}
+
+@media (max-width: 480px) {
+    .image {
+        height: 30vh; /* Further adjust height */
+        max-width: 90%; /* Make it almost full width */
+    }
+}
+
+    </style>
+    <title>Motion</title>
+</head>
+<body>
+    <div class="main">
+        <h1>Motion controlled pick & palce obstacles avoider robotic vehicle project</h1>
+        <div class="image"><img src="https://nevonprojects.com/wp-content/uploads/2019/01/7.png" alt="" srcset=""></div>
+        <section class="step">
+            <h2>Step 1: Gather Materials</h2>
+            <p>Collect the necessary components for the robotic vehicle, such as an Arduino board, motors, motor driver, ultrasonic sensor, IR sensor, pick-and-place mechanism (servo), Bluetooth module, and battery.</p>
+        </section>
+        <section class="step">
+            <h2>Step 2: Assemble the Vehicle Chassis</h2>
+            <p>Assemble the robotic vehicle chassis, including the wheels and motors. Mount the DC motors to the chassis and connect them to the motor driver for movement control.</p>
+        </section>
+        <section class="step">
+            <h2>Step 3: Set Up the Ultrasonic Sensor</h2>
+            <p>Attach the ultrasonic sensor to the robot's front. Connect it to the Arduino to measure the distance from obstacles, enabling the robot to avoid collisions.</p>
+        </section>
+        <section class="step">
+            <h2>Step 4: Attach the IR Sensor</h2>
+            <p>Install the IR sensors on both sides of the robot to detect any obstacles nearby. These sensors will help the robot stay away from edges and navigate freely without falling off paths.</p>
+        </section>
+        <section class="step">
+            <h2>Step 5: Integrate the Pick-and-Place Mechanism</h2>
+            <p>Connect the servo motor to the robot for the pick-and-place functionality. Ensure it can grip and place objects securely. Attach a suitable gripping mechanism to the servo motor.</p>
+        </section>
+        <section class="step">
+            <h2>Step 6: Connect the Bluetooth Module</h2>
+            <p>Wire the Bluetooth module (e.g., HC-05) to the Arduino to enable motion control using a smartphone or remote controller via Bluetooth.</p>
+        </section>
+        <section class="step">
+            <h2>Step 7: Write and Upload the Code</h2>
+            <p>Write the Arduino code that controls the motors, reads data from the ultrasonic and IR sensors, and operates the pick-and-place mechanism. Upload the code to the Arduino board.</p>
+        </section>
+        <section class="step">
+            <h2>Step 8: Test the Motion Control</h2>
+            <p>Test the motion control by using a Bluetooth-enabled device to send commands to the robot. Ensure that the robot responds to the forward, backward, left, and right movements and that the pick-and-place function works as expected.</p>
+        </section>
+        <section class="step">
+            <h2>Step 9: Implement Obstacle Avoidance</h2>
+            <p>Program the robot to avoid obstacles using the ultrasonic sensor. The robot should stop or change direction when it detects an obstacle in its path, preventing collisions.</p>
+        </section>
+        <section class="step">
+            <h2>Step 10: Final Testing & Optimization</h2>
+            <p>Test the robot in a real environment, such as on a track with obstacles. Adjust sensor calibration and improve movement algorithms for better efficiency. Fine-tune the pick-and-place mechanism to ensure smooth operation.</p>
+        </section>
+    </div>
+</body>
+</html>

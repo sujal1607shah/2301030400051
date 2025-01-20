@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teachers</title>
+    <style>
+        *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    
+    html, body {
+        width: 100%;
+        /* height: 100%; */
+        font-family:'Gilroy';
+    }
+    .main{
+        background: linear-gradient( #242949, #1a1a1a);
+        width: 100%;
+        height: 100%;
+    }
+    .nav_bar{
+        background: linear-gradient(180deg, #24314d, #0b172f 50%, #2d2d2d 100%);
+        height: 15vh;
+        width: 100%;
+        display: flex;
+        border-radius: 20px;
+    }
+    .logo img{
+    height: 50%;
+    width: 10vh;
+    border-radius: 50%;
+    margin-top: 41px;
+    }
+    .nav_links{
+    height:100%;
+    width: 90%;
+    display: flex;
+    align-items:center;
+    margin-right: 20px;
+    gap: 5vh;
+    color: white;
+   
+}
+.list{
+    margin-top: 50px;
+    margin-left: 50px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.5s ease;
+}
+.list:hover{
+    color:aqua;
+    text-decoration: underline;
+    transform: scale(1.1);
+}
+#proj{
+    color: white;
+    text-decoration: underline;
+    transition: all 0.5s ease;
+}
+#proj:hover{
+    color: rgb(87, 252, 5);
+    text-decoration: bold;
+    transform: scale(1.1);
+}
+.search{
+    height: 25%;
+    width: 50vh;
+    color: black;
+    box-shadow: 2px 2px 2px 2px rgba(0, 162, 255, 0.897);
+    border: 3px solid black;
+    margin-top: 50px;
+    border-radius: 50px;
+    align-items: center;
+    text-align: start;
+}
+.profile-circle {
+    width: 70px;
+    height: 70px;
+    margin-top: 20px;
+    border-radius: 50%;
+    background-color: #8254ed; /* Darker background for contrast */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    margin-left: 60px;
+    margin-right: 60px;
+    /* text-size-adjust: 20px; */
+    color:black;
+    font-size: 30px;
+    font-weight: bold;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.techlist{
+    width: 100%;
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    grid-gap:10vh;
+
+}
+.box{
+    height: 10vh;
+    width: 30%;
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background-color: azure;
+    border-radius: 5px;
+    border: 2px solid black;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: all 0.5s ease;
+}
+.box:hover{
+    
+    transform: scale(1.1);
+}
+h1{
+    color: rgba(249, 160, 71, 0.751);
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+@media screen and (max-width: 1024px) {
+    .nav_bar {
+        flex-direction: column;
+        height: auto;
+        align-items: flex-start;
+    }
+
+    .logo img {
+        max-width: 12vh;
+    }
+
+    .nav_links {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 2vh;
+        width: 100%;
+    }
+}
+@media screen and (max-width: 768px) {
+    .nav_bar {
+        align-items: center;
+        flex-wrap: nowrap;
+        padding: 10px;
+    }
+
+    .nav_links {
+        flex-direction: column;
+        gap: 1vh;
+        text-align: center;
+    }
+
+    .search {
+        width: 80%;
+    }
+}
+@media screen and (max-width: 480px) {
+    .nav_bar {
+        flex-direction: column;
+    }
+
+    .logo img {
+        max-width: 10vh;
+    }
+
+    .nav_links {
+        gap: 1vh;
+    }
+
+    .search {
+        width: 90%;
+        margin: 10px auto;
+    }
+}
+.search{
+    padding-left: 7px;
+}
+
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div class="nav_bar">
+            <div class="logo">
+                <img    class="logo-pic" src="profitpixel.jpg" alt="logo">
+            </div>
+            <div class="nav_links">
+                <h2 class="list">Home</h2>
+                <h2 class="list">Projects</h2>
+                <h2 class="list" style="color: rgb(87, 252, 5);" id="proj">Teachers</h2>
+                <h2 class="list">About Us</h2>
+                <input type="text" placeholder="Search" class="search">
+                <div class="profile-circle">SJ</div>
+            </div>
+        </div>
+        <h1 style="text-align: center; margin-top: 20px;">Faculty list</h1>
+        <br>
+        <h4 style="text-align: center; color:beige; font-family: cursive;">WELCOME STUDENTS!! MEET WITH OUR DEDICATED FACULTY TEAM 😊😊</h4>
+        <div class="techlist">
+            <div class="box">Prof. Ram Suthar</div>
+            <div class="box">Prof. Yukti Makwana</div>
+            <div class="box">Prof. Rupa Patel</div>
+            <div class="box">Prof. Dev Nayak</div>
+            <div class="box">Prof. Shivam Dave</div>
+            <div class="box">Prof. Rekha Pathak</div>
+            <div class="box">Prof. Rima Shah</div>
+            <div class="box">Prof. Ajay Patel</div>
+            <div class="box">Prof. Nitai Bajaj</div>
+            <div class="box">Prof. Punit Gupta</div>
+            <div class="box">Prof. Divya Mathur</div>
+            <div class="box">Prof. Tina Kappor</div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Theme Switcher</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        :root {
+            /* Light theme variables */
+            --bg-primary: #f5f5f5;
+            --bg-secondary: #ffffff;
+            --text-primary: #333333;
+            --text-secondary: #666666;
+            --accent-color: #3498db;
+            --input-bg: #ffffff;
+            --input-border: #dddddd;
+            --shadow-color: rgba(0, 0, 0, 0.1);
+        }
+
+        [data-theme="dark"] {
+            /* Dark theme variables */
+            --bg-primary: #1a1a1a;
+            --bg-secondary: #2d2d2d;
+            --text-primary: #ffffff;
+            --text-secondary: #cccccc;
+            --accent-color: #4dabf7;
+            --input-bg: #3d3d3d;
+            --input-border: #4d4d4d;
+            --shadow-color: rgba(0, 0, 0, 0.3);
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .login-container {
+            background-color: var(--bg-secondary);
+            padding: 2.5rem;
+            border-radius: 15px;
+            box-shadow: 0 8px 24px var(--shadow-color);
+            width: 100%;
+            max-width: 400px;
+            position: relative;
+        }
+
+        .theme-switch {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            cursor: pointer;
+            background: none;
+            border: none;
+            color: var(--text-primary);
+            font-size: 1.5rem;
+            padding: 5px;
+        }
+
+        .login-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .login-header h1 {
+            font-size: 2rem;
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .login-header p {
+            color: var(--text-secondary);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--text-primary);
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid var(--input-border);
+            border-radius: 8px;
+            background-color: var(--input-bg);
+            color: var(--text-primary);
+            font-size: 1rem;
+        }
+
+        .form-group input:focus {
+            outline: none;
+            border-color: var(--accent-color);
+            box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.2);
+        }
+
+        .remember-forgot {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            color: var(--text-secondary);
+        }
+
+        .remember-me {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .forgot-password {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        .forgot-password:hover {
+            text-decoration: underline;
+        }
+
+        .login-button {
+            width: 100%;
+            padding: 0.75rem;
+            background-color: var(--accent-color);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .login-button:hover {
+            background-color: #2980b9;
+        }
+
+        .signup-link {
+            text-align: center;
+            margin-top: 1.5rem;
+            color: var(--text-secondary);
+        }
+
+        .signup-link a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        .signup-link a:hover {
+            text-decoration: underline;
+        }
+
+        /* Form validation styling */
+        .form-group input:invalid {
+            border-color: #e74c3c;
+        }
+
+        .form-group input:invalid:focus {
+            box-shadow: 0 0 0 2px rgba(231, 76, 60, 0.2);
+        }
+
+        /* Loading state */
+        .login-button.loading {
+            background-color: #bdc3c7;
+            cursor: not-allowed;
+        }
+
+        /* Success animation */
+        @keyframes success-pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        .login-success {
+            animation: success-pulse 0.5s ease-in-out;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="login-container">
+        <button class="theme-switch" id="themeSwitch">🌙</button>
+        
+        <div class="login-header">
+            <h1>Welcome Back</h1>
+            <p>Please enter your credentials to login</p>
+        </div>
+
+        <form id="loginForm">
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input 
+                    type="email" 
+                    id="email" 
+                    name="email" 
+                    required 
+                    placeholder="Enter your email"
+                >
+            </div>
+
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input 
+                    type="password" 
+                    id="password" 
+                    name="password" 
+                    required 
+                    placeholder="Enter your password"
+                    minlength="6"
+                >
+            </div>
+
+            <div class="remember-forgot">
+                <div class="remember-me">
+                    <input type="checkbox" id="remember" name="remember">
+                    <label for="remember">Remember me</label>
+                </div>
+                <a href="#" class="forgot-password">Forgot Password?</a>
+            </div>
+
+            <button type="submit" class="login-button" id="loginButton">
+                Login
+            </button>
+        </form>
+
+        <div class="signup-link">
+            Don't have an account? <a href="http://127.0.0.1:5500/Projects/DIY%20projects/signup.html">Sign up</a>
+        </div>
+    </div>
+
+    <script>
+        // Theme switcher functionality
+        const themeSwitch = document.getElementById('themeSwitch');
+        const htmlElement = document.documentElement;
+        
+        // Check for saved theme preference
+        const savedTheme = localStorage.getItem('theme') || 'light';
+        htmlElement.setAttribute('data-theme', savedTheme);
+        updateThemeIcon(savedTheme);
+
+        function updateThemeIcon(theme) {
+            themeSwitch.textContent = theme === 'dark' ? '☀️' : '🌙';
+        }
+
+        themeSwitch.addEventListener('click', () => {
+            const currentTheme = htmlElement.getAttribute('data-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            
+            htmlElement.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+            updateThemeIcon(newTheme);
+        });
+
+        // Form handling
+        const loginForm = document.getElementById('loginForm');
+        const loginButton = document.getElementById('loginButton');
+
+        loginForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            // Simulate loading state
+            loginButton.classList.add('loading');
+            loginButton.textContent = 'Logging in...';
+            loginButton.disabled = true;
+
+            // Simulate API call
+            try {
+                await new Promise(resolve => setTimeout(resolve, 1500));
+                
+                loginButton.textContent = 'Success!';
+                loginButton.classList.remove('loading');
+                loginButton.classList.add('login-success');
+                
+                // Reset form after success
+                setTimeout(() => {
+                    loginForm.reset();
+                    loginButton.textContent = 'Login';
+                    loginButton.classList.remove('login-success');
+                    loginButton.disabled = false;
+                }, 1500);
+
+            } catch (error) {
+                loginButton.textContent = 'Login';
+                loginButton.classList.remove('loading');
+                loginButton.disabled = false;
+                alert('Login failed. Please try again.');
+            }
+        });
+
+        // Input validation feedback
+        const inputs = loginForm.querySelectorAll('input[required]');
+        inputs.forEach(input => {
+            input.addEventListener('invalid', (e) => {
+                e.preventDefault();
+                input.classList.add('invalid');
+            });
+
+            input.addEventListener('input', () => {
+                input.classList.remove('invalid');
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Account</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            background: linear-gradient(#242949, #1a1a1a);
+            color: white;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .navbar {
+            background: rgba(0, 0, 0, 0.2);
+            padding: 1rem 2rem;
+        }
+
+        .navbar ul {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+        }
+
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+            flex-grow: 1;
+        }
+
+        .account-section {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            padding: 2rem;
+            backdrop-filter: blur(10px);
+            margin-bottom: 2rem;
+        }
+
+        .account-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .profile-image {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background: #ffffff20;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+        }
+
+        .account-details {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+        }
+
+        .detail-card {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 1rem;
+            border-radius: 8px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 1rem;
+            background: rgba(0, 0, 0, 0.2);
+            margin-top: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="account-section">
+            <div class="account-header">
+                <div class="profile-image">👤</div>
+                <div>
+                    <h1>Sujal shah</h1>
+                    <p>shahsujal@gmail.com</p>
+                </div>
+            </div>
+            
+            <div class="account-details">
+                <div class="detail-card">
+                    <h3>Account Info</h3>
+                    <p>Member since: Jan 2024</p>
+                    <p>Status: Active</p>
+                </div>
+                
+                <div class="detail-card">
+                    <h3>Preferences</h3>
+                    <p>Language: English</p>
+                    <p>Theme: Dark</p>
+                </div>
+                
+                <div class="detail-card">
+                    <h3>Activity</h3>
+                    <p>Last login: 2 hours ago</p>
+                    <p>Sessions: 42</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 profitpixel. All rights reserved.</p>
+    </footer>
+</body>
+</html>

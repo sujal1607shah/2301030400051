@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+       * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    font-family: 'Gilroy';
+}
+
+h1 {
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.image {
+    height: 50vh;
+    width: 90%; /* Use relative width */
+    max-width: 600px; /* Set a max-width for larger screens */
+    background-color: aqua;
+    margin: 20px auto; /* Center the element horizontally */
+}
+
+.image img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover; /* Ensure the image scales properly */
+}
+.step {
+    background-color: #444;
+    margin-bottom: 15px;
+    padding: 15px;
+    border-radius: 5px;
+}
+
+.step h2 {
+    font-size: 1.5rem;
+    color: #ff5722;
+    margin-bottom: 10px;
+}
+
+.step p {
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #eaeaea;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .image {
+        height: 40vh; /* Adjust height for smaller screens */
+        max-width: 80%; /* Reduce max width */
+    }
+}
+
+@media (max-width: 480px) {
+    .image {
+        height: 30vh; /* Further adjust height */
+        max-width: 90%; /* Make it almost full width */
+    }
+}
+
+    </style>
+    <title>Dustbin</title>
+</head>
+<body>
+    <div class="main">
+        <h1>Smart dustbin with IOT notification project</h1>
+        <div class="image"><img src="https://nevonprojects.com/wp-content/uploads/2019/01/4.png" alt="" srcset=""></div>
+        <section class="step">
+            <h2>Step 1: Gather Components</h2>
+            <p>Collect the necessary components: a DC motor, generator, Arduino board, power monitoring module (e.g., INA219), motor driver, battery, resistors, capacitors, jumper wires, and a display module (LCD or OLED).</p>
+        </section>
+        <section class="step">
+            <h2>Step 2: Set Up the Motor</h2>
+            <p>Install the DC motor to act as both a driving motor and a generator during braking. Mount it securely on the mechanical system.</p>
+        </section>
+        <section class="step">
+            <h2>Step 3: Connect the Power Monitoring Module</h2>
+            <p>Wire the power monitoring module (INA219 or similar) to the Arduino. Connect its input to the generator output to measure the voltage, current, and power.</p>
+        </section>
+        <section class="step">
+            <h2>Step 4: Attach the Motor Driver</h2>
+            <p>Connect the DC motor to the motor driver to allow control during regular operation and facilitate energy recovery during braking.</p>
+        </section>
+        <section class="step">
+            <h2>Step 5: Add the Battery</h2>
+            <p>Wire the battery to store the energy generated during braking. Include a charge controller to protect the battery from overcharging.</p>
+        </section>
+        <section class="step">
+            <h2>Step 6: Write the Arduino Code</h2>
+            <p>Write and upload the Arduino code to read the power monitoring module data and display it on the LCD or OLED. The code should also include logic to manage the motor and generator switching.</p>
+        </section>
+        <section class="step">
+            <h2>Step 7: Test the System</h2>
+            <p>Simulate braking by slowing down the motor and observe the power generation on the display. Verify that the energy is stored in the battery.</p>
+        </section>
+        <section class="step">
+            <h2>Step 8: Optimize and Finalize</h2>
+            <p>Calibrate the power monitoring module for accurate readings. Secure all components in a compact and safe housing for practical use.</p>
+        </section>
+    </div>
+</body>
+</html>

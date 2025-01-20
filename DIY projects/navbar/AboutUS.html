@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    
+    html, body {
+        width: 100%;
+        height: 100%;
+        font-family:'Gilroy';
+    }
+    .main{
+        background: linear-gradient( #242949, #1a1a1a);
+        width: 100%;
+    }
+    .nav_bar{
+        background: linear-gradient(180deg, #24314d, #0b172f 50%, #2d2d2d 100%);
+        height: 15vh;
+        width: 100%;
+        display: flex;
+        border-radius: 20px;
+    }
+    .logo img{
+    height: 50%;
+    width: 10vh;
+    border-radius: 50%;
+    margin-top: 41px;
+    }
+    .nav_links{
+    height:100%;
+    width: 90%;
+    display: flex;
+    align-items:center;
+    margin-right: 20px;
+    gap: 5vh;
+    color: white;
+   
+}
+.list{
+    margin-top: 50px;
+    margin-left: 50px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.5s ease;
+}
+.list:hover{
+    color:aqua;
+    text-decoration: underline;
+    transform: scale(1.1);
+}
+#proj{
+    color: white;
+    text-decoration: underline;
+    transition: all 0.5s ease;
+}
+#proj:hover{
+    color: rgb(87, 252, 5);
+    text-decoration: bold;
+    transform: scale(1.1);
+}
+.search{
+    height: 25%;
+    width: 50vh;
+    color: black;
+    box-shadow: 2px 2px 2px 2px rgba(0, 162, 255, 0.897);
+    border: 3px solid black;
+    margin-top: 50px;
+    border-radius: 50px;
+    align-items: center;
+    text-align: start;
+}
+.profile-circle {
+    width: 70px;
+    height: 70px;
+    margin-top: 20px ;
+    border-radius: 50%;
+    background-color: #8254ed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    margin-left: 60px;
+    margin-right: 60px;
+    color:black;
+    font-size: 30px;
+    font-weight: bold;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+  @media screen and (max-width: 1024px) {
+    .nav_bar {
+        flex-direction: column;
+        height: auto;
+        align-items: flex-start;
+    }
+
+    .logo img {
+        max-width: 12vh;
+    }
+
+    .nav_links {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 2vh;
+        width: 100%;
+    }
+}
+@media screen and (max-width: 768px) {
+    .nav_bar {
+        align-items: center;
+        flex-wrap: nowrap;
+        padding: 10px;
+    }
+
+    .nav_links {
+        flex-direction: column;
+        gap: 1vh;
+        text-align: center;
+    }
+
+    .search {
+        width: 80%;
+    }
+}
+@media screen and (max-width: 480px) {
+    .nav_bar {
+        flex-direction: column;
+    }
+
+    .logo img {
+        max-width: 10vh;
+    }
+
+    .nav_links {
+        gap: 1vh;
+    }
+
+    .search {
+        width: 90%;
+        margin: 10px auto;
+    }
+}
+.search{
+    padding-left: 7px;
+}
+.story-content h2 {
+            color: #dadcdd;
+            font-size: 2.5rem;
+            /* margin-bottom: 1.5rem; */
+        }
+.story-content{
+   
+    color: rgb(167, 105, 105);
+    margin-top: 50px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: medium;
+    line-height: 2.6;
+    margin-bottom: 1.5rem;
+}
+.story-content p{
+    padding-left: 2vh;
+}
+.categories {
+            padding: 5rem 2rem;
+            background-color: #f9f9f9;
+        }
+
+        .categories h2 {
+            text-align: center;
+            color: #2c3e50;
+            margin-bottom: 3rem;
+            font-size: 2.5rem;
+        }
+
+        .category-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .category-card {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .category-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .category-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+    </style>
+    <title>About Us</title>
+</head>
+<body>
+    <div class="main">
+        <div class="nav_bar">
+            <div class="logo">
+                <img    class="logo-pic" src="profitpixel.jpg" alt="logo">
+            </div>
+            <div class="nav_links">
+                <h2 class="list">Home</h2>
+                <h2 class="list">Projects</h2>
+                <h2 class="list">Teachers</h2>
+                <h2 class="list"style="color: rgb(87, 252, 5);" id="proj">About Us</h2>
+                <input type="text" placeholder="Search" class="search">
+                <div class="profile-circle">SJ</div>
+            </div>
+        </div>
+        <div class="story-content">
+            <h2>Our Story</h2>
+            <p>Started in 2020 by a group of passionate makers, DIY Creators Hub has grown into a thriving community of DIY enthusiasts.
+                <br> We believe in the power of creating with your own hands and sharing knowledge with others.</p>
+            <p>Our platform brings together experts and beginners, providing a space where everyone can learn, share, and grow their DIY skills.</p>
+        </div>
+        <section class="categories">
+            <h2>What We Cover</h2>
+            <div class="category-grid">
+                <div class="category-card">
+                    <div class="category-icon">🔨</div>
+                    <h3>Woodworking</h3>
+                    <p>From basic carpentry to fine furniture making, discover the joy of working with wood.</p>
+                </div>
+                <div class="category-card">
+                    <div class="category-icon">⚡</div>
+                    <h3>Electronics</h3>
+                    <p>Build your own gadgets and learn about circuits, programming, and automation.</p>
+                </div>
+                <div class="category-card">
+                    <div class="category-icon">🎨</div>
+                    <h3>Arts & Crafts</h3>
+                    <p>Express your creativity through various craft projects and artistic endeavors.</p>
+                </div>
+                <div class="category-card">
+                    <div class="category-icon">🌱</div>
+                    <h3>Home & Garden</h3>
+                    <p>Create beautiful spaces with DIY home improvement and gardening projects.</p>
+                </div>
+            </div>
+        </section>
+    </div>
+</body>
+</html>
